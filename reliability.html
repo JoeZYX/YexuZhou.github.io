@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+  <!--<![endif]-->
+
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="description" content="Haibin Zhao 赵海滨" />
+    <meta name="author" content="Haibin Zhao" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <title>Haibin Zhao</title>
+
+    <!-- STYLES -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:200i,300,300i,400,400i,500,500i,600,700,700i,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="css/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="css/colors.css" />
+    <link rel="stylesheet" type="text/css" href="css/darkMode.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="js/modernizr.custom.js"></script>
+    <![endif]-->
+    <!-- /STYLES -->
+  </head>
+
+  <body>
+    <div class="arlo_tm_news">
+      <div class="container">
+        <div class="arlo_tm_main_title">
+          <h3>Reliability of Analog Neuromorphic Circuit</h3>
+        </div>
+        <div class="list_inner">
+          <div class="section-spacing"></div>
+          <div class="section-spacing"></div>
+          <div class="mytext"></div>
+
+          <div class="mytext">
+            It is inevitable that there will be deviations between designed
+            circuits and actual circuits, either from limited manufacturing
+            precision, aging of the devices, or even failure of some components.
+            These deviations can cause the circuit to produce unreliable
+            outputs. Thus, it is important to consider these factors during the
+            circuit design process.
+          </div>
+          <div class="mytext">
+            It is notable that circuit reliability is a multifaceted issue that
+            can be optimized from a variety of perspectives, including
+            materials, manufacturing processes, and so on. My work focuses on
+            optimization at the algorithmic level, where the reliability of a
+            circuit can be improved by designing parameters that are insensitive
+            to changes.
+          </div>
+
+          <figure>
+            <img
+              src="img/myfigures/faults.png"
+              alt="Analog Neuromorphic Circuit"
+              style="width: 100%"
+            />
+            <figcaption>
+              Figure 1: Factors that impact the performance of neuromorphic
+              circuits.
+            </figcaption>
+          </figure>
+          <div class="section-spacing"></div>
+          <h4>Factors that impact reliability</h4>
+          <div class="section-spacing"></div>
+          <div class="mytext">
+            <b>Manufacturing error</b> is one of the most significant factors.
+            Due to the limited operation precision of the manufacturing
+            equipments and the e.g., the dispersion of the inks in printed
+            electronics, the deviation shows a uniform distribution around the
+            designed value.
+          </div>
+          <div class="mytext">
+            <b>Aging</b> changes the component values continuously over time.
+            The aging process of the PEDOT:PSS resistor follows a
+            exponential-like curve.
+          </div>
+          <div class="mytext">
+            <b>Sensing uncertainty</b>, as a part of the whole electronics, is
+            also a factor that impacts the reliability of the neuromorphic
+            circuits. This error is a synthetical result from fabrication error,
+            coupling between sensor and object being measured, environmental
+            noise, etc. It is generally modeled as a Gaussian distribution.
+          </div>
+          <div class="mytext">
+            <b>Device fault</b>, which generally caused by catastrophe during
+            fabrication or usage. Unlike manufacturing error, fault usually
+            leads to more unacceptable consequences, such as short circuit, open
+            circuit, etc.
+          </div>
+          <div class="mytext">
+            <b>Other factors</b>, which remains to be explored.
+          </div>
+
+          <div class="section-spacing"></div>
+
+          <h4>How do they impact the circuit?</h4>
+          <div class="section-spacing"></div>
+          <figure>
+            <img
+              src="img/myfigures/agingeffect.png"
+              alt="Analog Neuromorphic Circuit"
+              style="width: 100%"
+            />
+            <figcaption>Figure 2: Impact of aging on the weights.</figcaption>
+          </figure>
+          <div class="mytext">
+            <b>Aging</b> changes the conductances along with time. as the
+            weights are emulated by the ratio of conductances, the aging
+            trajectories of weights are random curves around their original
+            position. Figure 2 shows some aging trajectories of the weights in a
+            2-dimentional case.
+          </div>
+          <figure>
+            <img
+              src="img/myfigures/variationeffect.png"
+              alt="Analog Neuromorphic Circuit"
+              style="width: 95%"
+            />
+            <figcaption>
+              Figure 3: Impact of manufactuing error on nonlinear circuits.
+            </figcaption>
+          </figure>
+          <div class="mytext">
+            <b>Manufacturing error</b> also impact the weights. Simultaneously,
+            the manufacturing error also changes the conductances in the
+            nonlinear circuits, i.e., printed tanh-like circuit and the negation
+            circuit. Figure 3 shows some transfer characteristics of the
+            nonlinear circuits with varying conductances and transistances. (In
+            printed electronics, the property of transistors are affected by
+            their geometric features.)
+          </div>
+          <figure>
+            <img
+              src="img/myfigures/sueffect.png"
+              alt="Analog Neuromorphic Circuit"
+              style="width: 90%"
+            />
+            <figcaption>Figure 4: Sensing uncertainty.</figcaption>
+          </figure>
+          <div class="mytext">
+            <b>Sensing uncertainty</b> does not impact the computing system
+            itself, but rather adds an additional noise onto the true value.
+          </div>
+
+          <div class="section-spacing"></div>
+
+          <h4>Reliability-aware training of neuromorphic circuit</h4>
+          <div class="section-spacing"></div>
+          <div class="mytext">
+            The objective of reliability-aware training is to improve the
+            expected performance w.r.t. the stochastic noisy factors. For
+            example, in the aging-aware training, the training objective is
+            <p>
+              $$ \begin{aligned} &\min_{\theta} \mathbb{E}_t \left\{
+              L(x,y,\theta(t))\right\} \\ =&\min_{\theta} \int_t
+              L(x,y,\theta(t)){\rm d}t \end{aligned} $$
+            </p>
+            However, the optimization variable is not a value but a function.
+            Through reparameterization we can extract \( \theta_0 \) from \(
+            \theta(t) \) by
+            <p>$$ \theta(t) = \theta_0 \cdot A_{\omega}(t), $$</p>
+            where \( \theta_0 \) is the surrogate conductance at \(t=0\), i.e.,
+            the manufactured value, \( A_{\omega}(t) \) refers to aging-decay,
+            and \( \omega \) is stochastic variable that determines the aging
+            trajectory. Therefore, the training objective can be rewritten as
+            <p>
+              $$ \min_{\theta_0} \int_\omega\int_t L(x,y,\theta_0,
+              A_\omega(t)){\rm d}t{\rm d}\omega $$
+            </p>
+            This objective function can be numerically estimated by Monte-Carlo
+            integration, and then is will be able to be optimized through
+            gradient descent. Other factors can also be included into the
+            training objective in similar way.
+          </div>
+          <figure>
+            <img
+              src="img/myfigures/agingawaretraining.png"
+              alt="Analog Neuromorphic Circuit"
+              style="width: 40%"
+            />
+            <figcaption>
+              Figure 5: Visualization of aging-aware training.
+            </figcaption>
+          </figure>
+          <div class="mytext">
+            Figure 5 exemplarifies a simple example of aging-aware training. The
+            pink curve has an initial weights with higher loss, but the whole
+            aging trajectory falls into a low-loss region. In contrast, the blue
+            curve has a lower loss at the beginning, but the aging trajectory
+            leads to a higher loss.
+          </div>
+
+          <div class="section-spacing"></div>
+
+          <h4>Related Materials</h4>
+          <div class="section-spacing"></div>
+          <div class="mytext">
+              <ul>
+                  <li>
+                      <b>H. Zhao</b> <i>et al</i>. Highly-dependable printed neuromorphic circuits based on additive manufacturing. Flexible and Printed Electronics (IOP-FPE), vol. 8, no. 2, p. 025018, 2023.
+                      <a href="papers/2023 IOPFPE -- Highly-dependable printed neuromorphic circuits based on additive manufactuing.pdf" download target="_blank"><b>[PDF]</b></a>
+                  </li>
+                  <li>
+                      <b>H. Zhao</b> <i>et al</i>. Highly-Bespoke Robust Printed Neuromorphic Circuits. In Proceedings of Design, Automation & Test in Europe Conference & Exhibition (DATE), IEEE, 2023.
+                      <a href="papers/2023 DATE -- Highly Bespoke Robust Printed Neuromorphic Circuits (paper).pdf" download target="_blank"><b>[PDF]</b></a>
+                      <a href="slides/2023 DATE -- Highly Bespoke Robust Printed Neuromorphic Circuits (presentation).pdf" download target="_blank"><b>[Slide]</b></a>
+                      <a href="https://github.com/Neuromophic/LearnableNonlinearCircuits" target="_blank"><b>[Github]</b></a>
+                      <a href="https://www.youtube.com/watch?v=a-J6sx0gVzY" target="_blank"><b>[YouTube]</b></a>
+                  </li>
+                  <li>
+                      <b>H. Zhao</b> <i>et al</i>. Aging-Aware Training for Printed Neuromorphic Circuits. In Proceedings of International Conference on Computer-Aided Design (ICCAD), IEEE & ACM, 2022.
+                      <a href="papers/2022 ICCAD -- Aging-Aware Training for Printed Neuromorphic Circuits (paper).pdf" download target="_blank"><b>[PDF]</b></a>
+                      <a href="slides/2022 ICCAD -- Aging-Aware Training for Printed Neuromorphic Circuits (presentation).pdf" download target="_blank"><b>[Slide]</b></a>
+                      <a href="https://github.com/Neuromophic/Aging-aware-training" target="_blank"><b>[Github]</b></a>
+                      <a href="https://www.youtube.com/watch?v=SI5HnWD107k" target="_blank"><b>[YouTube]</b></a>
+                  </li>
+                  <li>
+                      (submitted) P. Pal <i>et al</i>. Fault Tolerant Circuit Design Analysis for Printed Neural Network Architectures. In Proceedings of the European Test Symposium (ETS), IEEE, 2024.
+                  </li>
+                  <li>
+                    <a href="slides/phdintroduction.pdf" target="_blank"><b>[Introduction of my dissertation]</b></a>
+                  </li>
+              </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

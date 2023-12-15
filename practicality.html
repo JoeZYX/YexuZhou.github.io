@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+  <!--<![endif]-->
+
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="description" content="Haibin Zhao 赵海滨" />
+    <meta name="author" content="Haibin Zhao" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <title>Haibin Zhao</title>
+
+    <!-- STYLES -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:200i,300,300i,400,400i,500,500i,600,700,700i,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="css/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="css/colors.css" />
+    <link rel="stylesheet" type="text/css" href="css/darkMode.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="js/modernizr.custom.js"></script>
+    <![endif]-->
+    <!-- /STYLES -->
+  </head>
+
+  <body>
+    <div class="arlo_tm_news">
+      <div class="container">
+        <div class="arlo_tm_main_title">
+          <h3>Practicality of Analog Neuromorphic Circuit</h3>
+        </div>
+        <div class="list_inner">
+          <div class="section-spacing"></div>
+          <div class="section-spacing"></div>
+          <div class="mytext"></div>
+
+          <div class="mytext">
+            To facilitate the deployment of neuromorphic circuits in real-life
+            applications, several practical issues have to be taken into
+            account. So far, we have considered the manufacturing cost, the
+            power consumption, and the compactness of the circuit. More
+            considerations will be made in the future.
+          </div>
+
+          <div class="section-spacing"></div>
+          <h4>Split manufacturing for ultra-low fabrication cost</h4>
+          <div class="section-spacing"></div>
+          <figure>
+            <img
+              src="img/myfigures/reprinting.png"
+              alt="Analog Neuromorphic Circuit"
+              style="width: 60%"
+            />
+            <figcaption>
+              Figure 1: Reprinting enabled by the additive process.
+            </figcaption>
+          </figure>
+          <div class="mytext">
+            Our split manufacturing is in the context of printed electronics.
+            Thanks to its additive manufacturing process (like color printing on
+            to papers), the advantages of multiple printing technologies can be
+            combined, and thus reduce the fabrication cost.
+          </div>
+          <div class="mytext">
+            As shown in figure 1, through depositing multiple layers of
+            conductive materials, the resulting resistor can be seen as the
+            parallel connection of each layer, therefore, the resulting
+            conductance is given by
+            <p>$$ g = \sum_{l} g^l. $$</p>
+            I.e., every conductance can be split into multiple parts,
+            afterwards, each part can be manufactured by a different printing
+            technology (figure 2), laveraging their advantages.
+          </div>
+          <figure>
+            <img
+              src="img/myfigures/petechnology.png"
+              alt="Analog Neuromorphic Circuit"
+              style="width: 45%"
+            />
+            <figcaption>Figure 2: Different printing technologies.</figcaption>
+          </figure>
+          <div class="mytext">
+            In case large quantities of neuromorphic circuits for different
+            tasks need to be manufactured, neither high volume technology (e.g.,
+            gravure printing) nor low volume technology (e.g., inkjet printing)
+            is able to cover both circuit performance and fabrication cost, as
+            the former can only fabricates same circuit and the latter has only
+            low throughput.
+          </div>
+          <div class="mytext">
+            We proposed a super pNN framework that enables to train multiple
+            neuromorphic circuits for different tasks with a common conductance
+            shared across all circuits, and mulitple individual conductances for
+            the point of use modification, as shown in figure 3.
+          </div>
+          <figure>
+            <img
+              src="img/myfigures/superpnn.png"
+              alt="Analog Neuromorphic Circuit"
+              style="width: 50%"
+            />
+            <figcaption>Figure 3: Super pNN framework.</figcaption>
+          </figure>
+          <div class="mytext">
+            With this approach, a large common part of the circuits can be
+            fabricated by high volume technology to guarantee the ultra-low
+            cost, and the individual part can be fabricated by low volume
+            technology to ensure the high performance.
+          </div>
+
+          <div class="section-spacing"></div>
+          <h4>
+            Power-aware training for energy-efficient neuromorphic circuit
+          </h4>
+          <div class="section-spacing"></div>
+          <div class="mytext">
+            Many target domains of neuromorphic circuits are disposable
+            applications or electronics powered by energy harvestor. Therefore,
+            reducing the power consumption and thus increasing the battery life
+            is of great importance.
+          </div>
+          <figure>
+            <img
+              src="img/myfigures/newpowercircuit.png"
+              alt="Analog Neuromorphic Circuit"
+              style="width: 45%"
+            />
+            <figcaption>
+              Figure 4: Improved architecture of a printed layer with each input
+              being inverted only once.
+            </figcaption>
+          </figure>
+          <div class="mytext">
+            We improved the circuit architecture for power-efficient usecase
+            (figure 4), and developed the differentiable power consumption model
+            to enable the reduction of power consumption during training of the
+            neuromorphic circuits (figure 5).
+          </div>
+          <figure>
+            <img
+              src="img/myfigures/powergraph.png"
+              alt="Analog Neuromorphic Circuit"
+              style="width: 40%"
+            />
+            <figcaption>
+              Figure 5: Computing graph including neuromorphic computing and
+              power consumption.
+            </figcaption>
+          </figure>
+          <div class="mytext">
+            In addition, we proposed <b>soft-count</b>, enabling the reduction
+            of power consumption not only through reduced circuit power
+            consumption, but also through reduced number of circuit components.
+          </div>
+
+          <div class="section-spacing"></div>
+          <h4>Compact neuromorphic circuit design</h4>
+          <div class="section-spacing"></div>
+          <div class="mytext">
+            As electronification and intellectualization step into the most edge
+            scenarios of our daily life, many next-generation electronics, such
+            as smart band-aid, requires compact design, so that the electronics
+            can be embedded into the smallest possible space.
+          </div>
+          <figure>
+            <img
+              src="img/myfigures/ea.png"
+              alt="Analog Neuromorphic Circuit"
+              style="width: 100%"
+            />
+            <figcaption>
+              Figure 6: Evolutionary algorithm that enables the optimization of
+              both circuit parameters and topologies.
+            </figcaption>
+          </figure>
+          <div class="mytext">
+            We proposed an evolutionary algorithm that enables the optimization
+            of both circuit parameters and topologies (figure 6). Compared to
+            <b>neural network pruning</b>, the proposed algorithm can further
+            reduced the circuit area by 2x - 3x with no performance drop.
+          </div>
+
+          <div class="section-spacing"></div>
+          <h4>Related Materials</h4>
+          <div class="section-spacing"></div>
+          <div class="mytext">
+              <ul>
+                  <li>
+                      <b>H. Zhao</b> <i>et al</i>. Power-Aware Training for Energy Efficient Printed Neuromorphic Circuits. In Proceedings of International Conference on Computer-Aided Design (ICCAD), IEEE & ACM, 2023.
+                      <a href="papers/2023 ICCAD -- Power-Aware Training for Energy-Efficient Printed Neuromorphic Circuits (paper).pdf" download target="_blank"><b>[PDF]</b></a>
+                      <a href="slides/2023 ICCAD -- Power-Aware Training for Energy-Efficient Printed Neuromorphic Circuits (presentation).pdf" download target="_blank"><b>[Slide]</b></a>
+                      <a href="https://github.com/Neuromophic/Power-Aware-Training" target="_blank"><b>[Github]</b></a>
+                      <a href="https://www.youtube.com/watch?v=w-LW_8nwX9M&t=6s" target="_blank"><b>[YouTube]</b></a>
+                  </li>
+                  <li>
+                      <b>H. Zhao</b> <i>et al</i>. Split Additive Manufacturing for Printed Neuromorphic Circuits. In Proceedings of Design, Automation & Test in Europe Conference & Exhibition (DATE), IEEE, 2023.
+                      <a href="papers/2023 DATE -- Split Additive Manufacturing for Printed Neuromorphic Circuits (paper).pdf" download target="_blank"><b>[PDF]</b></a>
+                      <a href="slides/2023 DATE -- Split Additive Manufacturing for Printed Neuromorphic Circuits (presentation).pdf" download target="_blank"><b>[Slide]</b></a>
+                      <a href="https://github.com/Neuromophic/Split_Manufacturing_One_Mask" target="_blank"><b>[Github]</b></a>
+                      <a href="https://www.youtube.com/watch?v=Y8KnAOZfLPo&t=539s" target="_blank"><b>[YouTube]</b></a>
+                  </li>
+                  <li>
+                      (submitted) <b>H. Zhao</b> <i>et al</i>. Neural Evolutionary Architecture Search for Compact Printed Analog Neuromorphic Circuit. In Proceedings of Design Automation Conference (DAC), ACM, 2024.
+                  </li>
+                  <li>
+                    <a href="slides/phdintroduction.pdf" target="_blank"><b>[Introduction of my dissertation]</b></a>
+                  </li>
+                  <li>
+                      Supervised bachelor thesis of <b>S. Li</b>, Weights Assimilation for Split Manufacturing of Printed Neuromorphic Circuits. 2022.
+                      <a href="papers/2022_Bachelor_Siyan_Li____Weights_Assimilation_for_Split_Manufacturing_of_printed_Neuromorphic_Circuits.pdf" download target="_blank"><b>[PDF]</b></a>
+                  </li>
+                  <li>
+                    Supervised Proseminar of <b>J. M. Trzcinski</b>, Neural Architecture Search for printed Neural Networks. 2022.
+                    <a href="papers/Jakub Trzcinski Neural Architecture Search for printed Neural Networks.pdf" download target="_blank"><b>[PDF]</b></a>
+                  </li>
+                  <li>
+                    Supervised Proseminar of <b>I. Borsanov</b>, Circuit Routing in Electronics Design Automation. 2023.
+                    <a href="papers/2023_Seminar_Ilie_Borsanov____Routing_in_Electronic_Design_Automation.pdf" download target="_blank"><b>[PDF]</b></a>
+                  </li>
+              </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

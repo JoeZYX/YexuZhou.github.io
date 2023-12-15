@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+  <!--<![endif]-->
+
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="description" content="Haibin Zhao 赵海滨" />
+    <meta name="author" content="Haibin Zhao" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <title>Haibin Zhao</title>
+
+    <!-- STYLES -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:200i,300,300i,400,400i,500,500i,600,700,700i,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="css/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="css/colors.css" />
+    <link rel="stylesheet" type="text/css" href="css/darkMode.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="js/modernizr.custom.js"></script>
+    <![endif]-->
+    <!-- /STYLES -->
+  </head>
+
+  <body>
+    <div class="arlo_tm_news">
+      <div class="container">
+        <div class="arlo_tm_main_title">
+          <h3>Efficient Neural Architecture Design</h3>
+        </div>
+        <div class="list_inner">
+          <div class="section-spacing"></div>
+          <div class="section-spacing"></div>
+          <div class="mytext"></div>
+
+          <div class="mytext">
+            The architecture of neural networks, as non-differentiable
+            hyperparameters, are difficult to be optimized, and has also
+            received substantial research interest.
+          </div>
+
+          <div class="section-spacing"></div>
+          <h4>Highly-compact neural architecture design</h4>
+          <div class="section-spacing"></div>
+          <div class="mytext">
+            Targeting to the employment of human activity recognition (HAR) in
+            edge scenarios, we respect the task characteristics and propose
+            multiple highly-compact neural architectures. It can perform HAR
+            with high accuracy and extremely low computational cost.
+          </div>
+          <figure>
+            <img
+              src="img/myfigures/tinyhar.png"
+              alt="NAS"
+              style="width: 100%"
+            />
+            <figcaption>Figure 1: Structure of TinyHAR.</figcaption>
+          </figure>
+
+          <div class="section-spacing"></div>
+          <h4>Multi-modal neural architecture design</h4>
+          <div class="section-spacing"></div>
+          <div class="mytext">
+            Targeting to improving the accuracy of HAR, we propose to employ
+            both frequency information and time domain signal for HAR tasks. For
+            this, we proposed a
+          </div>
+          <figure>
+            <img
+              src="img/myfigures/crossattention.png"
+              alt="NAS"
+              style="width: 50%"
+            />
+            <figcaption>
+              Figure 2: Proposed HAR model that fuses frequency and time
+              information through cross-attention.
+            </figcaption>
+          </figure>
+
+          <div class="section-spacing"></div>
+          <h4>Hardware-aware NAS</h4>
+          <div class="section-spacing"></div>
+          <div class="mytext">
+            We propose a comprehensive framework that combines neural
+            architecture search (NAS) with network pruning. By involving the
+            hardware constraints, i.e., memory requirement and number of
+            floating point operations, into the loss function, the proposed
+            framework can automatically yield models that fulfill the
+            constraints of the target hardware.
+          </div>
+          <figure>
+            <img
+              src="img/myfigures/naspruning.png"
+              alt="NAS"
+              style="width: 50%"
+            />
+            <figcaption>
+              Figure 3: A comprehensive framework that combines NAS with
+              pruning.
+            </figcaption>
+          </figure>
+
+          <div class="section-spacing"></div>
+          <h4>Related Materials</h4>
+          <div class="section-spacing"></div>
+          <div class="mytext">
+            <ul>
+              <li>
+                Y. Zhou, <b>H. Zhao</b> <i>et al</i>. TinyHAR - A Lightweight
+                Deep Learning Model Designed for Human Activity Recognition. In
+                Proceedings of International Symposium on Wearable Computers
+                (ISWC), ACM, 2022.
+                <a href="papers/TinyHAR.pdf" download target="_blank"><b>[PDF]</b></a>
+                <a href="https://github.com/teco-kit/ISWC22-HAR" target="_blank"><b>[Github]</b></a>
+              </li>
+              <li>
+                Y. Huang, <b>H. Zhao</b> <i>et al</i>. Standardizing Your Training Process for Human Activity Recognition Models – A Comprehensive Review in the Tunable Factors. International Conference on Mobile and Ubiquitous Systems (Mobiquitous), Springer Nature Switzerland, 2023.
+                <a href="papers/formalHAR.pdf" download target="_blank"><b>[PDF]</b></a>
+              </li>
+              <li>
+                (submitted) Y. Zhou, <b>H. Zhao</b> <i>et al</i>.
+                Cross-Attention Transformer with Multi-Representation for Human
+                Activity Recognition Using Wearable Sensors. 2024 IEEE
+                International Conference on Pervasive Computing and
+                Communications (PerCom). IEEE, 2024.
+              </li>
+              <li>
+                (submitted) Y. Zhou <i>et al</i>. Enhancing Efficiency in HAR
+                Models: NAS Meets Pruning. 2024 IEEE International Conference on
+                Pervasive Computing and Communications (PerCom). IEEE, 2024.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+  <!--<![endif]-->
+
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="description" content="Haibin Zhao 赵海滨" />
+    <meta name="author" content="Haibin Zhao" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <title>Haibin Zhao</title>
+
+    <!-- STYLES -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:200i,300,300i,400,400i,500,500i,600,700,700i,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="css/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="css/colors.css" />
+    <link rel="stylesheet" type="text/css" href="css/darkMode.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="js/modernizr.custom.js"></script>
+    <![endif]-->
+    <!-- /STYLES -->
+  </head>
+
+  <body>
+    <div class="arlo_tm_news">
+      <div class="container">
+        <div class="arlo_tm_main_title">
+          <h3>Highly-Efficient Data Preprocessing</h3>
+        </div>
+        <div class="list_inner">
+          <div class="section-spacing"></div>
+          <div class="section-spacing"></div>
+          <div class="mytext"></div>
+
+          <div class="mytext">
+            Deep neural networks have demonstrated remarkable performance across
+            diverse applications, yet their increasing size poses challenges.
+            The shallow layers of DNNs typically focus on feature extraction,
+            while the deeper layers concentrate on the specific task. Therefore,
+            by enhancing the efficiency of the feature extraction process, the
+            overall complexity of the DNNs can be reduced. Moreover, given that
+            deep learning is inherently data-driven, it is susceptible to
+            overfitting. This is especially true for the sensor-based human
+            activity recognition (HAR) tasks, because the difference among
+            individuals are significant, and, due to the difficultes in labeling
+            sensor-based HAR data, the scale of HAR datasets is generally small
+            A primary cause of this overfitting is that the features extracted
+            by DNNs overfit the target task. Employing more generalized features
+            may mitigate this issue, leading to higher generalization of DNNs.
+          </div>
+
+          <div class="section-spacing"></div>
+          <h4>Learnable Sparse Wavelet Layer</h4>
+          <div class="section-spacing"></div>
+          <div class="mytext">
+            Considering the aforementioned problems, we tried to use more
+            general wavelets for feature extraction and sparsified the used
+            wavelets by pruning method. The proposed method greatly reduces the
+            computational effort of the model (including the wavelet layer) and
+            improves the classification accuracy.
+          </div>
+          <figure>
+            <img
+              src="img/myfigures/learnablewavelet.png"
+              alt="Feature Engineering"
+              style="width: 100%"
+            />
+            <figcaption>
+              Figure 1: Learnable sparse wavelet layer for data preprocessing
+              for human activity recognition (HAR) tasks.
+            </figcaption>
+          </figure>
+
+          <div class="section-spacing"></div>
+          <h4>Automated feature engineering</h4>
+          <div class="mytext">
+            As a part of the data preprocessing, automated feature engineering
+            draws increasing attention. We developed a web platform for
+            automatic feature engineering for time series data. The platform is
+            avilable at
+            <a href="http://automl.dmz.teco.edu/" target="_blank"
+              >http://automl.dmz.teco.edu/</a
+            >. With this platform, users can upload their own data and select &
+            generate important features automatically.
+          </div>
+
+          <div class="section-spacing"></div>
+          <h4>Data augmentation</h4>
+          <div class="mytext">
+            Data augmentation can also be seen as a part of the data preprocess.
+            Target to the sensor-based human activity recognition (HAR) tasks,
+            we developed a data augmentation method, AutoAugHAR, which respects
+            the unique characteristic of HAR and can automatically generate new
+            data from the original data. This method can substantially improve
+            the performance of HAR models.
+          </div>
+          <figure>
+            <img
+              src="img/myfigures/randaug.png"
+              alt="Feature Engineering"
+              style="width: 90%"
+            />
+            <figcaption>
+              Figure 2: Proposed RandAug for augmenting HAR data.
+            </figcaption>
+          </figure>
+
+          <div class="section-spacing"></div>
+          <h4>Related Materials</h4>
+          <div class="section-spacing"></div>
+          <div class="mytext">
+              <ul>
+                  <li>
+                      <b>H. Zhao</b> <i>et al</i>. Improving Human Activity Recognition by Learnable Sparse Wavelet Layer. In Proceedings of International Symposium on Wearable Computers (ISWC), ACM, 2022.
+                      <a href="papers/2022_ISWC____Improving_HAR_Models_by_Learnable_Sparse_Wavelet_Layer.pdf" download target="_blank"><b>[PDF]</b></a>
+                      <a href="slides/learnable wavelet.pdf" download target="_blank"><b>[Slide]</b></a>
+                      <a href="https://github.com/teco-kit/ISWC22-HAR" target="_blank"><b>[Github]</b></a>
+                      <a href="https://www.youtube.com/watch?v=tQnB6zTKPqg" target="_blank"><b>[YouTube]</b></a>
+                  </li>
+                  <li>
+                      Y. Zhou, <b>H. Zhao</b> <i>et al</i>. AutoAugHAR: Automated Data Augmentation for Sensor-based Human Activity Recognition. Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies, 2024.
+                      <!-- <a href="papers/2022_ISWC____Improving_HAR_Models_by_Learnable_Sparse_Wavelet_Layer.pdf" download target="_blank"><b>[PDF]</b></a> -->
+                  </li>
+                  <li>
+                      Supervised bachelor thesis of <b>K. Li</b>, Automated Feature Engineering for Time Series Data. 2023.
+                      <a href="papers/2023_Bachelor_Keyi_Li____Automated_Feature_Engineering_for_Time_Series_Data.pdf" download target="_blank"><b>[PDF]</b></a>
+                      <a href="http://automl.dmz.teco.edu/" target="_blank"><b>[Web Platform]</b></a>
+                  </li>
+              </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+  <!--<![endif]-->
+
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="description" content="Haibin Zhao 赵海滨" />
+    <meta name="author" content="Haibin Zhao" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <title>Haibin Zhao</title>
+
+    <!-- STYLES -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:200i,300,300i,400,400i,500,500i,600,700,700i,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="css/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="css/colors.css" />
+    <link rel="stylesheet" type="text/css" href="css/darkMode.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="js/modernizr.custom.js"></script>
+    <![endif]-->
+    <!-- /STYLES -->
+  </head>
+
+  <body>
+    <div class="arlo_tm_news">
+        <div class="container">
+            <div class="arlo_tm_main_title">
+                <h3>FreshIndex</h3>
+            </div>
+            <div class="list_inner">
+                <div class="section-spacing"></div>
+                <div class="section-spacing"></div>
+
+                <div class="mytext">
+                    The <a href="https://freshindex.eu/" download target="_blank"><b>FreshIndex</b></a> project, led by TSENSO, aims to address the challenge of food waste, where accurate data is needed to optimize the food supply chain and improve sustainability and safety due to the varying characteristics and shelf-life of food. FreshIndex provides an interconnected system for assessing and visualizing the true quality, safety, and shelf-life of food products, including dynamic best before dates that are based on real-world conditions.
+                </div>
+
+                <div class="section-spacing"></div>
+                <h4>Challenging</h4>
+                <div class="section-spacing"></div>
+                
+                <div class="mytext">
+                    <b>Sparsity of measurement</b>: As it was in the initial phase of the project, the collected data were highly unsystematic, e.g., the fruits are measured at various times and locations, leading to a substantial amount of missing data. This necessitated the application of advanced data preprocessing techniques to either fill in these gaps or develop models capable of handling incomplete data.
+                </div>
+
+                <div class="mytext">
+                    <b>Ultra-small-scale dataset</b>: Due to the invasive nature of the measurement of ground truth values, which destroys the fruit, there is a scarcity of labeled data (less than 50 samples). To leverage also the unlabeled data, semi-supervised learning techniques need to be employed.
+                </div>
+
+                <div class="mytext">
+                    <b>Prediction uncertainty and anomaly detection</b>: For ML users, not only on the output, but also the confidence of the output is important. To achieve this, Bayesian methods are employed alongside other techniques to provide and enhance the confidence of the model outputs.
+                </div>
+
+                <div class="section-spacing"></div>
+                <h4>AutoEncoder based semi-supervised learning</h4>
+                <figure>
+                    <img src="img/myfigures/freshindexae.png" alt="FreshIndex" style="width: 60%" />
+                    <figcaption>Figure 1: AutoEncoder based semi-supervised learning.</figcaption>
+                </figure>
+
+                <div class="mytext">
+                    By employing autoencoders and decoders, even unlabeled data can be utilized to train models that learn the intrinsic characteristics of the data. Meanwhile, another head is used for the regression task (the real objective), which makes the model learn useful data features for prediction making (figure 1).
+                </div>
+
+                <figure>
+                    <img src="img/myfigures/freshindexcompress.png" alt="FreshIndex" style="width: 70%" />
+                    <figcaption>Figure 2: Possibilities for reducing and increasing feature sizes.</figcaption>
+                </figure>
+
+                <div class="mytext">
+                    In the autoencoder and decoder, multiple approaches to reduce and increase feature sizes are designed (figure 2).
+                </div>
+
+                <div class="mytext">
+                    Another advantage of autoencoders is that they can be used for <b>anomaly detection</b>. Because the error model between the output of the decoder and the input reflects the effectiveness of the model in learning the features of the input data.
+                </div>
+
+                <div class="section-spacing"></div>
+                <div class="section-spacing"></div>
+                <h4>Bayesian inference</h4>
+                <div class="section-spacing"></div>
+
+                <figure>
+                    <img src="img/myfigures/freshindexbae.png" alt="FreshIndex" style="width: 65%" />
+                    <figcaption>Figure 3: Autoencoder with Bayesian approach.</figcaption>
+                </figure>
+
+                <div class="mytext">
+                    By using a Bayesian approach, the network can give not only a prediction, but also a confidence level about the prediction. Moreover, by using Bayesian approach, the neural network can perform better with small datasets.
+                </div>
+
+                <div class="section-spacing"></div>
+                <h4>Hyperparameter Optimization</h4>
+                <div class="section-spacing"></div>
+                <div class="mytext">
+                    In the whole project, as numerous hyperparameters and network structures are proposed (figure 2, figure 4), we employed Bayesian optimization to find the best hyperparameters and network structures.
+                </div>
+
+                <figure>
+                    <img src="img/myfigures/freshindextp.png" alt="FreshIndex" style="width: 90%" />
+                    <figcaption>Figure 4: Candidate models for temporal data processing to predict fruit freshness.</figcaption>
+                </figure>
+
+                <div class="section-spacing"></div>
+                <h4>Related Materials</h4>
+                <div class="section-spacing"></div>
+                <div class="mytext">
+                    Due to copyright and privacy requirements, specific project information cannot be disclosed.
+                    <ul>
+                        <li>
+                            <a href="papers/FreshIndex Report.pdf" download target="_blank"><b>[Project report]</b></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+  <!--<![endif]-->
+
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="description" content="Haibin Zhao 赵海滨" />
+    <meta name="author" content="Haibin Zhao" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <title>Haibin Zhao</title>
+
+    <!-- STYLES -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:200i,300,300i,400,400i,500,500i,600,700,700i,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="css/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="css/colors.css" />
+    <link rel="stylesheet" type="text/css" href="css/darkMode.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="js/modernizr.custom.js"></script>
+    <![endif]-->
+    <!-- /STYLES -->
+  </head>
+
+  <body>
+    <div class="arlo_tm_news">
+      <div class="container">
+        <div class="arlo_tm_main_title">
+          <h3>Neural Network Compression</h3>
+        </div>
+        <div class="list_inner">
+          <div class="section-spacing"></div>
+          <div class="section-spacing"></div>
+          <div class="mytext"></div>
+
+          <div class="mytext">
+            Neural network compression is an effective way to realize AI at the edge. It aims to achieve a lightweight model by reducing the number or precision of network parameters while keeping acceptable performance. Consequently, even cheap devices with poor hardware are also able to run machine learning models.
+          </div>
+
+          <div class="section-spacing"></div>
+          <h4>Network quantization</h4>
+          <div class="section-spacing"></div>
+          <div class="mytext">
+            Neural network quantization refers to the conversion of high-precision parameters (e.g., float 64) to low-precision parameters, such as 8 bits or even 1 bit (binary neural networks). In this way, both the storage, reading and calculation of parameters are greatly accelerated and the burden on the hardware is reduced.
+          </div>
+          <div class="mytext">
+            The most naive approach for network quantization is to do the <b>post-quantization</b>, meaning to quantize (e.g., round) the parameters after training. However, this approach can substantially impact the network performance.
+          </div>
+          <div class="mytext">
+            As an alternative, <b>quantization-aware training</b> can address the performance drop caused by quantization. Nevertheless, a major problem in quantization-aware training lies in the non-differentiable  operations (e.g., rounding) in the forward pass. Because it will hinder the backpropagation of gradients. As a result, quantization-aware training can hardly be implemented through conventional methods. There are already existing approach e.g., giving a manual gradient to guide the training of quantized neural network (figure 1), but the relaxed problem inevitably biases the original problem, leading to suboptimal solutions.
+          </div>
+          <figure>
+            <img
+              src="img/myfigures/quantization.png"
+              alt="Quantization"
+              style="width: 30%"
+            />
+            <figcaption>Figure 1: Forward pass with quantization while backward with another given function.</figcaption>
+          </figure>
+          <div class="mytext">
+            To this end, we employ ADMM to perform quantization-aware training. ADMM is a gradient-free optimization method. By decomposing the neural network into a series of small and simple sub-problems, it is easy to find the optimal solution for each sub-problem. Afterwards, by using Augmenting Lagrangian method, all the sub-problems can be recombined into a complete problem, with each of the sub-problem already being solved (figure 2).
+          </div>
+          <figure>
+            <img
+              src="img/myfigures/admm.png"
+              alt="Quantization"
+              style="width: 90%"
+            />
+            <figcaption>Figure 2: How does ADMM train neural networks.</figcaption>
+          </figure>
+          <div class="mytext">
+            We also proposed a novel quantization method that inspired by the <b>gravity in the universe</b> (figure 3). The gravity is a force that attracts objects to the center of the earth. The closer the object is to the center of the earth, the greater the gravity it receives. Similarly, we can also define a gravity for each parameter in the neural network based on their Euclidean distance. In this way, the parameters can be quantized <b>automatically and dynamically</b> during the training process. Thus, the <b>number of clusters (number of bit) is not required to be predefined</b>. Meanwhile, the performance of the quantized network though this kind of gravitational attraction can be <b>preserved</b> to a large extent, as it will automatically balance with the loss function for classification accuracy.
+          </div>
+          <figure>
+            <img
+              src="img/myfigures/gravity.gif"
+              alt="Quantization"
+              style="width: 60%"
+            />
+            <figcaption>Figure 3: 2D example of dynamic gravitational weights assimilation during training.</figcaption>
+          </figure>
+
+          <div class="section-spacing"></div>
+          <h4>Network pruning</h4>
+          <div class="section-spacing"></div>
+          <div class="mytext">
+            Network pruning refers to removing parts of the neural network that are not important for the final prediction. It can be divided into <b>structured pruning</b> and <b>unstructured pruning</b>. Structured pruning refers to removing the entire channel or filter, while unstructured pruning refers to removing individual parameters. Structured pruning is more suitable for hardware acceleration, because unstructured pruning need to be supported by special toolbox.
+          </div>
+          <div class="mytext">
+            We proposed a novel pruning method with progressive regularization and soft-thresholding. In this way, the scaling factor is no longer a hyperparameter that needs to be tuned, but is replaced with a sparsity-aware parameter that increases progressively. In this way, the value of the scaling factor can be automatically aligned with the target sparsity, avoiding the drawbacks in its tuning. Moreover, only parameters below a minimal and learnable soft threshold are pruned, therefore, informative parameters (even with small magnitudes) are optimally preserved.
+          </div>
+          <figure>
+            <img
+              src="img/myfigures/progressivepruning.png"
+              alt="Pruning"
+              style="width: 50%"
+            />
+            <figcaption>
+              Figure 4: Problems of scaling factor tuning and the disadvantage of pruning small but sensitive parameters. In contrast, progressive regularization and soft-thresholding may avoid those problems.
+            </figcaption>
+          </figure>
+
+          <div class="section-spacing"></div>
+          <h4>Related Materials</h4>
+          <div class="section-spacing"></div>
+          <div class="mytext">
+            <ul>
+              <li>
+                (submitted) Y. Zhou, <b>H. Zhao</b> <i>et al</i>. Deep Neural Network Pruning with Progressive Regularizer, World Conference on Explainable Artificial Intelligence. Cham: Springer Nature Switzerland, 2024.
+              </li>
+              <li>
+                (submitted) Y. Zhou <i>et al</i>. Enhancing Efficiency in HAR
+                Models: NAS Meets Pruning. 2024 IEEE International Conference on
+                Pervasive Computing and Communications (PerCom). IEEE, 2024.
+              </li>
+              <li>
+                Supervised master thesis of <b>X. Ma</b>, Training Quantized Neural Networks with ADMM Approach. 2023.
+                <a href="papers/2023_Master_Xue_Ma____ADMM.pdf" download target="_blank"><b>[PDF]</b></a>
+              </li>
+              <li>
+                Supervised bachelor thesis of <b>S. Li</b>, Weights Assimilation for Split Manufacturing of Printed Neuromorphic Circuits. 2022.
+                <a href="papers/2022_Bachelor_Siyan_Li____Weights_Assimilation_for_Split_Manufacturing_of_printed_Neuromorphic_Circuits.pdf" download target="_blank"><b>[PDF]</b></a>
+              </li>
+              <li>
+                Supervised Proseminar of <b>M. Thieme</b>, An Introduction: Neural Network Quantization and Parameterized Clipping Activation. 2023.
+                <a href="papers/2023_Seminar____Neural_Network_Quantization__PACT__Archiv_.pdf" download target="_blank"><b>[PDF]</b></a>
+              </li>
+              <li>
+                Supervised Proseminar of <b>F. Ferber</b>, Quantifying gradients in deep Convolutional Neural Networks with the DoReFa-Net. 2023.
+                <a href="papers/2023_Seminar____Neural_Network_Quantization__DoReFa_Net__Archiv_.pdf" download target="_blank"><b>[PDF]</b></a>
+              </li>
+              <li>
+                Supervised Proseminar of <b>J. Langbecker</b>, Wide Reduced-Precision Networks. 2023.
+                <a href="papers/2023_Seminar____Neural_Network_Quantization__WRPN__Archiv_.pdf" download target="_blank"><b>[PDF]</b></a>
+              </li>
+              <li>
+                Supervised Proseminar of <b>T. Pfitzner</b>, Quantization of Neural Networks: An Exploration of Techniques and Trade-offs. 2023.
+                <a href="papers/2023_Seminar____Quantization_Aware_Training_for_Neural_Networks__Copy_.pdf" download target="_blank"><b>[PDF]</b></a>
+              </li>            
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
